@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -40,11 +42,43 @@ class SignUpViewController: UIViewController {
 
     func validateFields() -> String? {
         
+        if nombreTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            apellidoTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        {
+            return "Por favor rellene todos los campos"
+        }
         
+        //Agregar otras validaciones luego
         
         return nil
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
+        
+        let error = validateFields()
+        
+        if error != nil {
+            showError(error!)
+        }
+        else{
+            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (result, error) in
+                <#code#>
+                if error != nil{
+                    //Error al crear usuario
+                    self.showError("Error al crear usuario")
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+    }
+    
+    func showError (_ message:String){
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
 }
