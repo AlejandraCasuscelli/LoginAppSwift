@@ -161,8 +161,7 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <action selector="signUpTap:" destination="0MX-S6-5ox" eventType="touchUpInside" id="j6d-ZV-9In"/>
-                                            <action selector="signUpTapped:" destination="0MX-S6-5ox" eventType="touchUpInside" id="Ruf-oZ-tDw"/>
+                                            <action selector="SignUpButtonTapped:" destination="0MX-S6-5ox" eventType="touchUpInside" id="ETb-Uo-liy"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcw-ar-cet">
@@ -205,7 +204,7 @@
         <!--Home View Controller-->
         <scene sceneID="iFc-8n-UbO">
             <objects>
-                <viewController id="Rpt-QP-DKY" customClass="HomeViewController" customModule="LoginAppS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="Rpt-QP-DKY" customClass="HomeViewController" customModule="LoginAppS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ghy-Bw-vYk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

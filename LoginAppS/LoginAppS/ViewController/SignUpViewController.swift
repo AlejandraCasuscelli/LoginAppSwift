@@ -55,30 +55,54 @@ class SignUpViewController: UIViewController {
         return nil
     }
     
-    @IBAction func signUpTapped(_ sender: Any) {
+    @IBAction func SignUpButtonTapped(_ sender: Any) {
         
         let error = validateFields()
         
-        if error != nil {
-            showError(error!)
-        }
-        else{
-            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (result, error) in
-                <#code#>
-                if error != nil{
-                    //Error al crear usuario
-                    self.showError("Error al crear usuario")
+                if error != nil {
+                    showError(error!)
                 }
-                else
-                {
-                    
+                else{
+        
+                    let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    let apellido = apellidoTextField.text
+                    let nombre = nombreTextField.text
+        
+                    Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        
+                        if error != nil{
+                            //Error al crear usuario
+                            self.showError("Error al crear usuario")
+                        }
+                        else
+                        {
+                            //En el result viene el uid del usuario recien creado
+                            let db = Firestore.firestore()
+        
+                            db.collection("users").addDocument(data: ["apellido":apellido, "nombre":nombre, "uid":result!.user.uid ]) { (error) in
+        
+                                if error != nil{
+                                    self.showError("Error al guardar datos de usuario") //no se pudo guardar el nombre y apellido de usuario, VER
+                                }
+        
+                            }
+        
+                            self.irAHome()
+                        }
+                    }
                 }
-            }
-        }
     }
     
     func showError (_ message:String){
         errorLabel.text = message
         errorLabel.alpha = 1
+    }
+    
+    func irAHome() {
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
 }
