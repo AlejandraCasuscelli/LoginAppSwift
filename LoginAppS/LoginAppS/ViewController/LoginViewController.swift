@@ -11,6 +11,10 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    enum loginError:Error {
+        case formularioIncompleto
+        case usuarioInvalido
+    }
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -34,15 +38,12 @@ class LoginViewController: UIViewController {
         Utilities.styleFilledButton(loginButton)
     }
 
-    func validateFields() -> String? {
+    func validateFields() throws {
         
         if  emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-        {
-            return "Por favor rellene todos los campos"
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            throw loginError.formularioIncompleto
         }
-        
-        return nil
     }
     
     func showError (_ message:String){
@@ -56,30 +57,31 @@ class LoginViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }
-
-    @IBAction func loginTapped(_ sender: Any) {
-        
-        let error = validateFields()
-        
-                if error != nil {
-                    showError(error!)
+    
+    func login(){
+        do {
+            try validateFields()
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil{
+                    self.showError("Usuario invalido")
                 }
                 else{
-        
-                    let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-                    Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                        
-                        if error != nil{
-                            self.showError("Error al logear")
-                        }
-                        else{
-                            self.irAHome()
-                        }
-                    }
-                    
+                    self.irAHome()
                 }
+            }
+            
+        } catch loginError.formularioIncompleto {
+            showError("Por favor complete todos los campos")
+        } catch {
+            showError("Ha ocurrido un error interno")
+        }
+    }
+
+    @IBAction func loginTapped(_ sender: Any) {
+        login()
     }
     
 }
