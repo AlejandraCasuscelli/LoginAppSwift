@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		6160F58623F179D400ED5603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160F58523F179D400ED5603 /* LoginViewController.swift */; };
 		6160F58823F179EB00ED5603 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160F58723F179EB00ED5603 /* HomeViewController.swift */; };
 		6160F58C23F1970500ED5603 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160F58B23F1970500ED5603 /* Utilities.swift */; };
+		61982B3023F327320006EF65 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 61982B2F23F327320006EF65 /* Logging */; };
 		61A8A61323F1CD3A001AFE8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8A61223F1CD3A001AFE8E /* Constants.swift */; };
 		9A1410C54BD35E1FAEC5B4DE /* Pods_LoginAppS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8E13EEA7DDA179CF09FBED /* Pods_LoginAppS.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61982B3023F327320006EF65 /* Logging in Frameworks */,
 				9A1410C54BD35E1FAEC5B4DE /* Pods_LoginAppS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +153,9 @@
 			dependencies = (
 			);
 			name = LoginAppS;
+			packageProductDependencies = (
+				61982B2F23F327320006EF65 /* Logging */,
+			);
 			productName = LoginAppS;
 			productReference = 6160F56C23F1757700ED5603 /* LoginAppS.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +184,9 @@
 				Base,
 			);
 			mainGroup = 6160F56323F1757700ED5603;
+			packageReferences = (
+				61982B2E23F327320006EF65 /* XCRemoteSwiftPackageReference "swift-log" */,
+			);
 			productRefGroup = 6160F56D23F1757700ED5603 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -454,6 +462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61982B2E23F327320006EF65 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61982B2F23F327320006EF65 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61982B2E23F327320006EF65 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6160F56423F1757700ED5603 /* Project object */;
 }

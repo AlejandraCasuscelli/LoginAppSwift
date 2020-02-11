@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Logging
 
 class LoginViewController: UIViewController {
 
@@ -59,6 +60,10 @@ class LoginViewController: UIViewController {
     }
     
     func login(){
+        
+        let logger = Logger(label: "com.example.BestExampleApp.main")
+        logger.info("LoginButtonTapped")
+        
         do {
             try validateFields()
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -82,6 +87,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginTapped(_ sender: Any) {
         login()
+
     }
     
 }
