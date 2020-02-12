@@ -21,8 +21,6 @@ class AlamofireAndSwiftyJSONViewController: UIViewController {
     @IBAction func clickButtonClicked(_ sender: Any) {
          
         AF.request("https://codewithchris.com/code/afsample.json").responseJSON { response in
-//            debugPrint("Response2: \(response)")
-            
             if let value = try? response.result.get(){
                 var data = response.data
                 var js = JSON(data)
@@ -31,8 +29,26 @@ class AlamofireAndSwiftyJSONViewController: UIViewController {
             }else{
                 debugPrint("es null")
             }
-            
         }
+        
+        //Pruebo pegandole a provincia
+        var headers: HTTPHeaders = [
+                   .accept("application/json")
+               ]
+        headers.add(name: "aplicacionOrigen", value: "postman")
+        headers.add(name: "Content-Type", value: "application/json")
+        headers.add(name: "traza", value: "333")
+        
+               AF.request("ReemplazarPorUrlEnMail", headers: headers).responseJSON { response in
+                   debugPrint(response)
+               }
     }
     
 }
+
+//class HeaderGlobons: Header {
+//    init() {
+//    }
+//    let traza:String?
+//
+//}
