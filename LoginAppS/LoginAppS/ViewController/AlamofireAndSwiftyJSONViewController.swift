@@ -39,8 +39,21 @@ class AlamofireAndSwiftyJSONViewController: UIViewController {
         headers.add(name: "Content-Type", value: "application/json")
         headers.add(name: "traza", value: "333")
         
-               AF.request("ReemplazarPorUrlEnMail", headers: headers).responseJSON { response in
-                   debugPrint(response)
+               AF.request("Reemplazar por Url", headers: headers).responseJSON { response in
+//                   debugPrint(response)
+                var data = response.data
+//                var js = response.data
+                var js = JSON(data)["datosUtiles"]
+                do {
+                    var datosUtiles = try JSONDecoder().decode(Array<DatoUtil>.self, from: js.rawData())
+//                    print(datosUtiles)
+                    datosUtiles.forEach { (dato) in
+                        print(dato.direccion)
+                    }
+                }catch{
+                    print(error)
+                }
+                
                }
     }
     
@@ -52,3 +65,10 @@ class AlamofireAndSwiftyJSONViewController: UIViewController {
 //    let traza:String?
 //
 //}
+
+struct DatoUtil:Codable{
+    var direccion:String
+    var horario:String
+    var telefono:String
+    var titulo:String
+}
