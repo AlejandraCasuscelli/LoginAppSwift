@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-fT-BgT">
-                                <rect key="frame" x="40" y="642" width="334" height="180"/>
+                                <rect key="frame" x="40" y="652" width="334" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-C1-TAd">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -38,14 +38,11 @@
                                             <segue destination="cqM-Ok-rXG" kind="show" id="OeB-G5-dNN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lr3-bB-epW">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="slV-ET-i05"/>
-                                        </constraints>
-                                        <state key="normal" title="Login Provincia"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-kd-NGD">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="30"/>
+                                        <state key="normal" title="OmitirLogin"/>
                                         <connections>
-                                            <segue destination="O7O-Bl-Ci0" kind="show" id="Am6-gQ-HlQ"/>
+                                            <segue destination="Rpt-QP-DKY" kind="show" id="DSY-ag-OTM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -142,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="je7-WE-WJu">
-                                <rect key="frame" x="40" y="128" width="334" height="190"/>
+                                <rect key="frame" x="40" y="84" width="334" height="190"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-8s-19j">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -277,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-xh-YNw">
-                                <rect key="frame" x="40" y="84" width="334" height="90.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="160.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWl-w6-a7m">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
@@ -295,7 +292,17 @@
                                             <segue destination="UIt-RL-0T0" kind="show" id="Jd3-Q7-UNF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uay-vn-sgn">
+                                        <rect key="frame" x="0.0" y="110.5" width="334" height="50"/>
+                                        <state key="normal" title="Alamofire / SwiftyJSON"/>
+                                        <connections>
+                                            <segue destination="9QW-mP-2SB" kind="show" id="hOf-hW-LXw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="uay-vn-sgn" firstAttribute="height" secondItem="261-Eb-XbP" secondAttribute="height" id="xqg-z1-tKQ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -306,51 +313,90 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4A5-d0-Tl0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qMs-nl-LdX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vs3-hZ-3yP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2133" y="122"/>
+        </scene>
+        <!--Alamofire And SwiftyJSON View Controller-->
+        <scene sceneID="amK-3F-aMM">
+            <objects>
+                <viewController id="9QW-mP-2SB" customClass="AlamofireAndSwiftyJSONViewController" customModule="LoginAppS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iV1-gR-h4M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WVx-A1-Tm8">
+                                <rect key="frame" x="50" y="138" width="314" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-HD-rzH">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                        <state key="normal" title="ClickButton"/>
+                                        <connections>
+                                            <action selector="clickButtonClicked:" destination="9QW-mP-2SB" eventType="touchUpInside" id="YfS-Hs-Hu2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WVx-A1-Tm8" firstAttribute="leading" secondItem="3dx-aB-qDf" secondAttribute="leading" constant="50" id="5w9-c6-3jR"/>
+                            <constraint firstItem="3dx-aB-qDf" firstAttribute="trailing" secondItem="WVx-A1-Tm8" secondAttribute="trailing" constant="50" id="KIE-fL-tvX"/>
+                            <constraint firstItem="WVx-A1-Tm8" firstAttribute="top" secondItem="3dx-aB-qDf" secondAttribute="top" constant="50" id="lcg-TK-MTg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3dx-aB-qDf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DOG-RT-BJa"/>
+                    <connections>
+                        <outlet property="clickButton" destination="OUk-HD-rzH" id="IBA-ep-1f1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64W-av-hMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2854" y="417"/>
         </scene>
         <!--Relative Constrain View Controller-->
         <scene sceneID="9av-hX-MTw">
             <objects>
                 <viewController id="UIt-RL-0T0" customClass="RelativeConstrainViewController" customModule="LoginAppS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoo-hu-FMH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-dZ-CFr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHG-Mv-c8K" userLabel="Button1">
-                                <rect key="frame" x="64.5" y="386.5" width="285" height="69"/>
+                                <rect key="frame" x="64.5" y="413.5" width="285" height="69"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Facebook" backgroundImage="FB">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-y0-Rw4" userLabel="Button2">
-                                <rect key="frame" x="64.5" y="465.5" width="285" height="69"/>
+                                <rect key="frame" x="64.5" y="492.5" width="285" height="69"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Google" backgroundImage="Google">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35b-Xq-O5J" userLabel="Button3">
-                                <rect key="frame" x="64.5" y="544.5" width="285" height="69"/>
+                                <rect key="frame" x="64.5" y="571.5" width="285" height="69"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Email" backgroundImage="Email">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redes Sociales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHG-Fa-09B">
-                                <rect key="frame" x="149" y="355.5" width="116" height="21"/>
+                                <rect key="frame" x="149" y="382.5" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RelativeConstrains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pb-uO-hkH">
-                                <rect key="frame" x="106" y="285.5" width="202" height="30"/>
+                                <rect key="frame" x="106" y="312.5" width="202" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
