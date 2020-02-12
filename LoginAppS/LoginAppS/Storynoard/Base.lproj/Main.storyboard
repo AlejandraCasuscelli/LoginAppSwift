@@ -251,7 +251,61 @@
                     <view key="view" contentMode="scaleToFill" id="eoo-hu-FMH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-dZ-CFr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHG-Mv-c8K" userLabel="Button1">
+                                <rect key="frame" x="64.5" y="386.5" width="285" height="69"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Facebook" backgroundImage="FB">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-y0-Rw4" userLabel="Button2">
+                                <rect key="frame" x="64.5" y="465.5" width="285" height="69"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Google" backgroundImage="Google">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35b-Xq-O5J" userLabel="Button3">
+                                <rect key="frame" x="64.5" y="544.5" width="285" height="69"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Email" backgroundImage="Email">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redes Sociales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHG-Fa-09B">
+                                <rect key="frame" x="149" y="355.5" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RelativeConstrains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pb-uO-hkH">
+                                <rect key="frame" x="106" y="285.5" width="202" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="35b-Xq-O5J" firstAttribute="centerX" secondItem="eoo-hu-FMH" secondAttribute="centerX" id="4GZ-69-8ey"/>
+                            <constraint firstItem="SHG-Mv-c8K" firstAttribute="top" secondItem="qHG-Fa-09B" secondAttribute="bottom" constant="10" id="4bk-Zq-Gfy"/>
+                            <constraint firstAttribute="bottom" secondItem="oPc-dZ-CFr" secondAttribute="bottom" id="4hU-yc-bTd"/>
+                            <constraint firstItem="oPc-dZ-CFr" firstAttribute="leading" secondItem="eoo-hu-FMH" secondAttribute="leading" id="5Aw-AS-prD"/>
+                            <constraint firstItem="qHG-Fa-09B" firstAttribute="top" secondItem="9pb-uO-hkH" secondAttribute="bottom" constant="40" id="A2A-br-cYb"/>
+                            <constraint firstItem="SHG-Mv-c8K" firstAttribute="centerX" secondItem="eoo-hu-FMH" secondAttribute="centerX" id="Lwv-KU-Wt3"/>
+                            <constraint firstItem="35b-Xq-O5J" firstAttribute="top" secondItem="dhg-y0-Rw4" secondAttribute="bottom" constant="10" id="NJc-2B-E0A"/>
+                            <constraint firstItem="dhg-y0-Rw4" firstAttribute="top" secondItem="SHG-Mv-c8K" secondAttribute="bottom" constant="10" id="OnE-F4-U1E"/>
+                            <constraint firstAttribute="trailing" secondItem="oPc-dZ-CFr" secondAttribute="trailing" id="ZGd-ZE-e1b"/>
+                            <constraint firstItem="dhg-y0-Rw4" firstAttribute="centerX" secondItem="eoo-hu-FMH" secondAttribute="centerX" id="bnL-fq-IOR"/>
+                            <constraint firstItem="SHG-Mv-c8K" firstAttribute="centerY" secondItem="eoo-hu-FMH" secondAttribute="centerY" id="mxL-Lp-Suh"/>
+                            <constraint firstItem="9pb-uO-hkH" firstAttribute="centerX" secondItem="eoo-hu-FMH" secondAttribute="centerX" id="qnb-FC-nd3"/>
+                            <constraint firstItem="oPc-dZ-CFr" firstAttribute="top" secondItem="eoo-hu-FMH" secondAttribute="top" id="xpe-I1-im9"/>
+                            <constraint firstItem="qHG-Fa-09B" firstAttribute="centerX" secondItem="eoo-hu-FMH" secondAttribute="centerX" id="zaO-8K-x3T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DqF-o7-r0u"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZQW-vH-pwR"/>
@@ -279,4 +333,10 @@
             <point key="canvasLocation" x="-65.217391304347828" y="121.875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="414" height="896"/>
+        <image name="Email" width="285" height="69"/>
+        <image name="FB" width="285" height="69"/>
+        <image name="Google" width="285" height="69"/>
+    </resources>
 </document>

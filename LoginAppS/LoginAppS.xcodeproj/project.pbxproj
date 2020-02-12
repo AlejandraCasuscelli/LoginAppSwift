@@ -66,13 +66,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		61192F1423F2C997008CF616 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		6137451023F4209600F503A7 /* Storynoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				6137451023F4209600F503A7 /* Storynoard */,
-				61192F1423F2C997008CF616 /* Resources */,
 				6160F58A23F196BD00ED5603 /* Helpers */,
 				6160F58923F17B2800ED5603 /* ViewController */,
 				6160F56F23F1757700ED5603 /* AppDelegate.swift */,
