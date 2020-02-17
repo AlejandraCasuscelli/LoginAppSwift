@@ -41,7 +41,21 @@ class PrincipalPageViewController: UIViewController, UICollectionViewDataSource,
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: width, height: height)
         
-
+//        var imgLogoProvincia = UIImage(named: "provincia_logo")
+//        
+//        var navController = navigationController!
+//        
+//        var navWidth = navController.navigationBar.frame.size.width
+//        var navHeight = navController.navigationBar.frame.size.height
+//        
+//        var navX = navWidth / 2
+//        var navY = navHeight / 2
+//        
+//        var logoProvincia = UIImageView(image: imgLogoProvincia)
+//        var frame = CGRect(x: navX, y: navY, width: 10, height: 10)
+//        logoProvincia.frame = frame
+//        logoProvincia.contentMode = .scaleAspectFit
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoProvincia)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
