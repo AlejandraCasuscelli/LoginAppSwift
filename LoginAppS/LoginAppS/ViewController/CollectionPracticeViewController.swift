@@ -8,15 +8,6 @@
 
 import UIKit
 
-class MenuItem{
-    init(DisplayName:String, Icon:UIImage?) {
-        self.DisplayName = DisplayName
-        self.Icon = Icon
-    }
-    var DisplayName:String
-    var Icon:UIImage?
-}
-
 class CollectionPracticeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     
