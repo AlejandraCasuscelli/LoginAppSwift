@@ -22,7 +22,11 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var menuItems:[MenuItem] = []
+    var menuItems:[MenuItem] = [MenuItem(DisplayName: "Home", Icon: UIImage(named: "icono_home")),
+    MenuItem(DisplayName: "Chat", Icon: UIImage(named: "icono_chat")),
+    MenuItem(DisplayName: "Notificaciones", Icon: UIImage(named: "icono_notificaciones")),
+    MenuItem(DisplayName: "MiPerfil", Icon: UIImage(named: "icono_miperfil"))]
+    
        var burges = ["Home","Chat","Notificaciones","MiPerfil"]
        var burgerImages = [UIImage(named: "icono_home")!,
                            UIImage(named: "icono_chat")!,
@@ -40,11 +44,11 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
         
         layout.itemSize = CGSize(width: width, height: width)
         
-        menuItems = [MenuItem(DisplayName: "Home", Icon: UIImage(named: "icono_home")),
-                     MenuItem(DisplayName: "Chat", Icon: UIImage(named: "icono_chat")),
-                     MenuItem(DisplayName: "Notificaciones", Icon: UIImage(named: "icono_notificaciones")),
-                     MenuItem(DisplayName: "MiPerfil", Icon: UIImage(named: "icono_miperfil"))
-        ]
+//        menuItems = [MenuItem(DisplayName: "Home", Icon: UIImage(named: "icono_home")),
+//                     MenuItem(DisplayName: "Chat", Icon: UIImage(named: "icono_chat")),
+//                     MenuItem(DisplayName: "Notificaciones", Icon: UIImage(named: "icono_notificaciones")),
+//                     MenuItem(DisplayName: "MiPerfil", Icon: UIImage(named: "icono_miperfil"))
+//        ]
         // Do any additional setup after loading the view.
     }
 
@@ -54,8 +58,10 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! PrincipalMenuCollectionViewCell
-        menuCell.labelTest.text = burges[indexPath.item]
-        menuCell.imageTest.image = burgerImages[indexPath.item]
+//        menuCell.labelTest.text = burges[indexPath.item]
+//        menuCell.imageTest.image = burgerImages[indexPath.item]
+        menuCell.labelTest.text = menuItems[indexPath.item].DisplayName
+        menuCell.imageTest.image = menuItems[indexPath.item].Icon
         return menuCell
     }
 
