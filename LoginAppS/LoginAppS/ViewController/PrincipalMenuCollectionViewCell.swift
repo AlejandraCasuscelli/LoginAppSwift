@@ -11,4 +11,6 @@ import UIKit
 class PrincipalMenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelTest: UILabel!
+    
+    @IBOutlet weak var imageTest: UIImageView!
 }

@@ -55,6 +55,7 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! PrincipalMenuCollectionViewCell
         menuCell.labelTest.text = burges[indexPath.item]
+        menuCell.imageTest.image = burgerImages[indexPath.item]
         return menuCell
     }
 
