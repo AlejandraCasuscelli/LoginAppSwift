@@ -20,6 +20,8 @@ class MenuItem{
 class PrincipalViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var menuItems:[MenuItem] = []
        var burges = ["Home","Chat","Notificaciones","MiPerfil"]
        var burgerImages = [UIImage(named: "icono_home")!,
@@ -29,6 +31,15 @@ class PrincipalViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Obtengo la medida para las columnas de la collection view
+        let width = (view.frame.size.width - 10) / 2
+        
+        //Obtengo el layout de mi collection view
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.itemSize = CGSize(width: width, height: width)
+        
         menuItems = [MenuItem(DisplayName: "Home", Icon: UIImage(named: "icono_home")),
                      MenuItem(DisplayName: "Chat", Icon: UIImage(named: "icono_chat")),
                      MenuItem(DisplayName: "Notificaciones", Icon: UIImage(named: "icono_notificaciones")),
