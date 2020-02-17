@@ -57,7 +57,7 @@ class CollectionPracticeViewController: UIViewController, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! PrincipalMenuCollectionViewCell
+        let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! CollectionViewPracticeViewCell
 //        menuCell.labelTest.text = burges[indexPath.item]
 //        menuCell.imageTest.image = burgerImages[indexPath.item]
         menuCell.labelTest.text = menuItems[indexPath.item].DisplayName

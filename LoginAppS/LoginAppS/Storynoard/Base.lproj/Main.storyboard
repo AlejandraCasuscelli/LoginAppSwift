@@ -156,7 +156,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCell" id="oBr-OS-d7s" customClass="PrincipalMenuCollectionViewCell" customModule="LoginAppS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCell" id="oBr-OS-d7s" customClass="CollectionViewPracticeViewCell" customModule="LoginAppS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -201,6 +201,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yzw-9J-dfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2854" y="-912"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="C0k-86-AIL">
+            <objects>
+                <viewController id="3Mk-Oe-vm5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AdT-xm-DAE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="stK-I0-9CV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiu-Pt-JM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-546"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="sT9-6w-6sH">
